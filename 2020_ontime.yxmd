@@ -1,0 +1,2000 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.3">
+  <Nodes>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="618" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\classes\Data Analysis\Communication Data Findings\L_UNIQUE_CARRIERS.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>L_UNIQUE_CARRIERS.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Code" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\L_UNIQUE_CARRIERS.csv" type="V_String" />
+            <Field name="Description" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\L_UNIQUE_CARRIERS.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="774" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>OP_UNIQUE_CARRIER</FieldFind>
+          <FieldSearch>Code</FieldSearch>
+          <ReplaceFoundField>Description</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Append</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields>
+            <Field field="Description" />
+          </ReplaceAppendFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="846" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Description" selected="True" rename="CARRIER" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="678" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1013" y="125" width="147" height="165" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Output file</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1038" y="174" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">C:\classes\Data Analysis\Communication Data Findings\2020_comb_ontime_data.csv</File>
+              <Passwords />
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>,</Delimeter>
+                <ForceQuotes>False</ForceQuotes>
+                <HeaderRow>True</HeaderRow>
+                <CodePage>28591</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>2020_comb_ontime_data.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="930" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="round(ToNumber([CRS_DEP_TIME]),100)&#xA;" field="DEP_HOUR" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[DEP_HOUR = round(ToNumber([CRS_DEP_TIME]),100)
+
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="37">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1314" y="426" width="124.5821" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>analysis</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1362" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="YEAR" action="GroupBy" rename="YEAR" />
+                <SummarizeField field="ORIGIN_CITY_NAME" action="GroupBy" rename="ORIGIN_CITY_NAME" />
+                <SummarizeField field="ARR_DELAY_NEW" action="Avg" rename="Avg_ARR_DELAY_NEW" />
+                <SummarizeField field="FLIGHTS" action="Sum" rename="Sum_FLIGHTS" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="25">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="1470" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Avg_ARR_DELAY_NEW" order="Descending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Avg_ARR_DELAY_NEW - Descending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1434" y="474" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="YEAR" action="GroupBy" rename="YEAR" />
+                <SummarizeField field="MONTH" action="GroupBy" rename="MONTH" />
+                <SummarizeField field="ARR_DELAY_NEW" action="Avg" rename="Avg_ARR_DELAY_NEW" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="1446" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Sum_FLIGHTS" order="Descending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Sum_FLIGHTS - Descending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="28">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="1518" y="474" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Avg_ARR_DELAY_NEW" order="Descending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Avg_ARR_DELAY_NEW - Descending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+            <Position x="1566" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>First</Mode>
+              <N>10</N>
+              <GroupFields orderChanged="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>First 10</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+        </Node>
+        <Node ToolID="30">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="1662" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Avg_ARR_DELAY_NEW" order="Descending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Avg_ARR_DELAY_NEW - Descending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+        <Node ToolID="31">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="1338" y="714" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="YEAR" action="GroupBy" rename="YEAR" />
+                <SummarizeField field="dep_hour" action="GroupBy" rename="dep_hour" />
+                <SummarizeField field="CARRIER_DELAY" action="Avg" rename="Avg_CARRIER_DELAY" />
+                <SummarizeField field="WEATHER_DELAY" action="Avg" rename="Avg_WEATHER_DELAY" />
+                <SummarizeField field="NAS_DELAY" action="Avg" rename="Avg_NAS_DELAY" />
+                <SummarizeField field="SECURITY_DELAY" action="Avg" rename="Avg_SECURITY_DELAY" />
+                <SummarizeField field="LATE_AIRCRAFT_DELAY" action="Avg" rename="Avg_LATE_AIRCRAFT_DELAY" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+            <Position x="1518" y="762" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SortInfo locale="0">
+                <Field field="Avg_CARRIER_DELAY" order="Descending" />
+              </SortInfo>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Avg_CARRIER_DELAY - Descending</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="52.99998" y="65" width="301" height="585" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 65</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="270" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="OP_CARRIER_AIRLINE_ID" selected="False" type="String" size="5" />
+                <SelectField field="OP_CARRIER_FL_NUM" selected="False" type="String" size="5" />
+                <SelectField field="ORIGIN_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="DEST_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="DEST_AIRPORT_SEQ_ID" selected="False" />
+                <SelectField field="FIRST_DEP_TIME" selected="False" />
+                <SelectField field="TOTAL_ADD_GTIME" selected="False" />
+                <SelectField field="LONGEST_ADD_GTIME" selected="False" />
+                <SelectField field="DIV_AIRPORT_LANDINGS" selected="False" />
+                <SelectField field="DIV_REACHED_DEST" selected="False" />
+                <SelectField field="DIV_ACTUAL_ELAPSED_TIME" selected="False" />
+                <SelectField field="DIV_ARR_DELAY" selected="False" />
+                <SelectField field="DIV_DISTANCE" selected="False" />
+                <SelectField field="DIV1_AIRPORT" selected="False" />
+                <SelectField field="DIV1_AIRPORT_ID" selected="False" />
+                <SelectField field="Field_50" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="174" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="YEAR" selected="True" />
+                <Field field="QUARTER" selected="True" />
+                <Field field="MONTH" selected="True" />
+                <Field field="DAY_OF_MONTH" selected="True" />
+                <Field field="FL_DATE" selected="True" />
+                <Field field="OP_UNIQUE_CARRIER" selected="True" />
+                <Field field="OP_CARRIER_AIRLINE_ID" selected="True" />
+                <Field field="OP_CARRIER_FL_NUM" selected="True" />
+                <Field field="ORIGIN_AIRPORT_ID" selected="True" />
+                <Field field="ORIGIN" selected="True" />
+                <Field field="ORIGIN_CITY_NAME" selected="True" />
+                <Field field="ORIGIN_STATE_ABR" selected="True" />
+                <Field field="DEST_AIRPORT_ID" selected="True" />
+                <Field field="DEST_AIRPORT_SEQ_ID" selected="True" />
+                <Field field="DEST" selected="True" />
+                <Field field="DEST_CITY_NAME" selected="True" />
+                <Field field="DEST_STATE_ABR" selected="True" />
+                <Field field="CRS_DEP_TIME" selected="True" />
+                <Field field="DEP_TIME" selected="True" />
+                <Field field="DEP_DELAY" selected="True" />
+                <Field field="DEP_DELAY_NEW" selected="True" />
+                <Field field="CRS_ARR_TIME" selected="True" />
+                <Field field="ARR_TIME" selected="True" />
+                <Field field="ARR_DELAY" selected="True" />
+                <Field field="ARR_DELAY_NEW" selected="True" />
+                <Field field="CANCELLED" selected="True" />
+                <Field field="CANCELLATION_CODE" selected="True" />
+                <Field field="DIVERTED" selected="True" />
+                <Field field="CRS_ELAPSED_TIME" selected="True" />
+                <Field field="ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="AIR_TIME" selected="True" />
+                <Field field="FLIGHTS" selected="True" />
+                <Field field="DISTANCE" selected="True" />
+                <Field field="DISTANCE_GROUP" selected="True" />
+                <Field field="CARRIER_DELAY" selected="True" />
+                <Field field="WEATHER_DELAY" selected="True" />
+                <Field field="NAS_DELAY" selected="True" />
+                <Field field="SECURITY_DELAY" selected="True" />
+                <Field field="LATE_AIRCRAFT_DELAY" selected="True" />
+                <Field field="FIRST_DEP_TIME" selected="True" />
+                <Field field="TOTAL_ADD_GTIME" selected="True" />
+                <Field field="LONGEST_ADD_GTIME" selected="True" />
+                <Field field="DIV_AIRPORT_LANDINGS" selected="True" />
+                <Field field="DIV_REACHED_DEST" selected="True" />
+                <Field field="DIV_ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="DIV_ARR_DELAY" selected="True" />
+                <Field field="DIV_DISTANCE" selected="True" />
+                <Field field="DIV1_AIRPORT" selected="True" />
+                <Field field="DIV1_AIRPORT_ID" selected="True" />
+                <Field field="Field_50" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="QUARTER" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DAY_OF_MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="FL_DATE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Date" />
+                <Field name="OP_UNIQUE_CARRIER" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="OP_CARRIER_FL_NUM" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ORIGIN_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="DEST_AIRPORT_SEQ_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Int32" />
+                <Field name="DEST" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="CRS_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DEP_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ARR_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLATION_CODE" size="1" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DIVERTED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="AIR_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FLIGHTS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE_GROUP" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="CARRIER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="WEATHER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="NAS_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="SECURITY_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LATE_AIRCRAFT_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FIRST_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="TOTAL_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LONGEST_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_AIRPORT_LANDINGS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DIV_REACHED_DEST" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV1_AIRPORT" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DIV1_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="Field_50" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="Bool" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="3">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="78" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>2020_1_ONTIME_REPORTING.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="QUARTER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DAY_OF_MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FL_DATE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_UNIQUE_CARRIER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_CARRIER_FL_NUM" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_SEQ_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLATION_CODE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIVERTED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="AIR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FLIGHTS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE_GROUP" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CARRIER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="WEATHER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="NAS_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="SECURITY_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LATE_AIRCRAFT_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FIRST_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="TOTAL_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LONGEST_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_AIRPORT_LANDINGS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_REACHED_DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV1_AIRPORT" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV1_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="Field_50" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_1_ONTIME_REPORTING.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="270" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="OP_CARRIER_AIRLINE_ID" selected="False" type="String" size="5" />
+                <SelectField field="ORIGIN_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="ORIGIN_AIRPORT_SEQ_ID" selected="False" />
+                <SelectField field="DEST_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="DEST_AIRPORT_SEQ_ID" selected="False" />
+                <SelectField field="FIRST_DEP_TIME" selected="False" />
+                <SelectField field="TOTAL_ADD_GTIME" selected="False" />
+                <SelectField field="LONGEST_ADD_GTIME" selected="False" />
+                <SelectField field="DIV_AIRPORT_LANDINGS" selected="False" />
+                <SelectField field="DIV_REACHED_DEST" selected="False" />
+                <SelectField field="DIV_ACTUAL_ELAPSED_TIME" selected="False" />
+                <SelectField field="DIV_ARR_DELAY" selected="False" />
+                <SelectField field="DIV_DISTANCE" selected="False" />
+                <SelectField field="DIV1_AIRPORT" selected="False" />
+                <SelectField field="Field_49" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="270" y="390" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="OP_CARRIER_AIRLINE_ID" selected="False" type="String" size="5" />
+                <SelectField field="ORIGIN_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="ORIGIN_AIRPORT_SEQ_ID" selected="False" />
+                <SelectField field="DEST_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="DEST_AIRPORT_SEQ_ID" selected="False" />
+                <SelectField field="FIRST_DEP_TIME" selected="False" />
+                <SelectField field="TOTAL_ADD_GTIME" selected="False" />
+                <SelectField field="LONGEST_ADD_GTIME" selected="False" />
+                <SelectField field="DIV_AIRPORT_LANDINGS" selected="False" />
+                <SelectField field="DIV_REACHED_DEST" selected="False" />
+                <SelectField field="DIV_ACTUAL_ELAPSED_TIME" selected="False" />
+                <SelectField field="DIV_ARR_DELAY" selected="False" />
+                <SelectField field="DIV_DISTANCE" selected="False" />
+                <SelectField field="DIV1_AIRPORT" selected="False" />
+                <SelectField field="Field_49" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="270" y="294" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="OP_CARRIER_AIRLINE_ID" selected="False" type="String" size="5" />
+                <SelectField field="ORIGIN_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="ORIGIN_AIRPORT_SEQ_ID" selected="False" />
+                <SelectField field="DEST_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="DEST_AIRPORT_SEQ_ID" selected="False" />
+                <SelectField field="FIRST_DEP_TIME" selected="False" />
+                <SelectField field="TOTAL_ADD_GTIME" selected="False" />
+                <SelectField field="LONGEST_ADD_GTIME" selected="False" />
+                <SelectField field="DIV_AIRPORT_LANDINGS" selected="False" />
+                <SelectField field="DIV_REACHED_DEST" selected="False" />
+                <SelectField field="DIV_ACTUAL_ELAPSED_TIME" selected="False" />
+                <SelectField field="DIV_ARR_DELAY" selected="False" />
+                <SelectField field="DIV_DISTANCE" selected="False" />
+                <SelectField field="DIV1_AIRPORT" selected="False" />
+                <SelectField field="Field_49" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="270" y="474" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="OP_CARRIER_AIRLINE_ID" selected="False" type="String" size="5" />
+                <SelectField field="ORIGIN_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="ORIGIN_AIRPORT_SEQ_ID" selected="False" />
+                <SelectField field="DEST_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="DEST_AIRPORT_SEQ_ID" selected="False" />
+                <SelectField field="FIRST_DEP_TIME" selected="False" />
+                <SelectField field="TOTAL_ADD_GTIME" selected="False" />
+                <SelectField field="LONGEST_ADD_GTIME" selected="False" />
+                <SelectField field="DIV_AIRPORT_LANDINGS" selected="False" />
+                <SelectField field="DIV_REACHED_DEST" selected="False" />
+                <SelectField field="DIV_ACTUAL_ELAPSED_TIME" selected="False" />
+                <SelectField field="DIV_ARR_DELAY" selected="False" />
+                <SelectField field="DIV_DISTANCE" selected="False" />
+                <SelectField field="DIV1_AIRPORT" selected="False" />
+                <SelectField field="Field_49" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="270" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="OP_CARRIER_AIRLINE_ID" selected="False" type="String" size="5" />
+                <SelectField field="ORIGIN_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="ORIGIN_AIRPORT_SEQ_ID" selected="False" />
+                <SelectField field="DEST_AIRPORT_ID" selected="False" type="String" size="5" />
+                <SelectField field="DEST_AIRPORT_SEQ_ID" selected="False" />
+                <SelectField field="FIRST_DEP_TIME" selected="False" />
+                <SelectField field="TOTAL_ADD_GTIME" selected="False" />
+                <SelectField field="LONGEST_ADD_GTIME" selected="False" />
+                <SelectField field="DIV_AIRPORT_LANDINGS" selected="False" />
+                <SelectField field="DIV_REACHED_DEST" selected="False" />
+                <SelectField field="DIV_ACTUAL_ELAPSED_TIME" selected="False" />
+                <SelectField field="DIV_ARR_DELAY" selected="False" />
+                <SelectField field="DIV_DISTANCE" selected="False" />
+                <SelectField field="DIV1_AIRPORT" selected="False" />
+                <SelectField field="Field_49" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="9">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="77.99998" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>2020_2_ONTIME_REPORTING.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="QUARTER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DAY_OF_MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FL_DATE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_UNIQUE_CARRIER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_AIRPORT_SEQ_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_SEQ_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLATION_CODE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIVERTED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="AIR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FLIGHTS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE_GROUP" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CARRIER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="WEATHER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="NAS_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="SECURITY_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LATE_AIRCRAFT_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FIRST_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="TOTAL_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LONGEST_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_AIRPORT_LANDINGS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_REACHED_DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV1_AIRPORT" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="Field_49" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="10">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="77.99998" y="474" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>2020_5_ONTIME_REPORTING.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="QUARTER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DAY_OF_MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FL_DATE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_UNIQUE_CARRIER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_AIRPORT_SEQ_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_SEQ_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLATION_CODE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIVERTED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="AIR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FLIGHTS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE_GROUP" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CARRIER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="WEATHER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="NAS_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="SECURITY_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LATE_AIRCRAFT_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FIRST_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="TOTAL_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LONGEST_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_AIRPORT_LANDINGS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_REACHED_DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV1_AIRPORT" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="Field_49" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="11">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="78" y="294" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>2020_3_ONTIME_REPORTING.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="QUARTER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DAY_OF_MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FL_DATE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_UNIQUE_CARRIER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_AIRPORT_SEQ_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_SEQ_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLATION_CODE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIVERTED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="AIR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FLIGHTS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE_GROUP" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CARRIER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="WEATHER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="NAS_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="SECURITY_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LATE_AIRCRAFT_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FIRST_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="TOTAL_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LONGEST_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_AIRPORT_LANDINGS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_REACHED_DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV1_AIRPORT" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="Field_49" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="12">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="78.00001" y="390" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>2020_4_ONTIME_REPORTING.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="QUARTER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DAY_OF_MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FL_DATE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_UNIQUE_CARRIER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_AIRPORT_SEQ_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_SEQ_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLATION_CODE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIVERTED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="AIR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FLIGHTS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE_GROUP" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CARRIER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="WEATHER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="NAS_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="SECURITY_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LATE_AIRCRAFT_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FIRST_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="TOTAL_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LONGEST_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_AIRPORT_LANDINGS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_REACHED_DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV1_AIRPORT" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="Field_49" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="77.99998" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>,</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>2020_6_ONTIME_REPORTING.csv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="QUARTER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DAY_OF_MONTH" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FL_DATE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_UNIQUE_CARRIER" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_AIRPORT_SEQ_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_AIRPORT_SEQ_ID" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_CITY_NAME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEP_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ARR_DELAY_NEW" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CANCELLATION_CODE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIVERTED" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CRS_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="AIR_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FLIGHTS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DISTANCE_GROUP" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="CARRIER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="WEATHER_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="NAS_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="SECURITY_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LATE_AIRCRAFT_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="FIRST_DEP_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="TOTAL_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="LONGEST_ADD_GTIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_AIRPORT_LANDINGS" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_REACHED_DEST" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_ARR_DELAY" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV_DISTANCE" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DIV1_AIRPORT" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="Field_49" size="254" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="174" y="198" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="YEAR" selected="True" />
+                <Field field="QUARTER" selected="True" />
+                <Field field="MONTH" selected="True" />
+                <Field field="DAY_OF_MONTH" selected="True" />
+                <Field field="FL_DATE" selected="True" />
+                <Field field="OP_UNIQUE_CARRIER" selected="True" />
+                <Field field="OP_CARRIER_AIRLINE_ID" selected="True" />
+                <Field field="ORIGIN_AIRPORT_ID" selected="True" />
+                <Field field="ORIGIN_AIRPORT_SEQ_ID" selected="True" />
+                <Field field="ORIGIN" selected="True" />
+                <Field field="ORIGIN_CITY_NAME" selected="True" />
+                <Field field="ORIGIN_STATE_ABR" selected="True" />
+                <Field field="DEST_AIRPORT_ID" selected="True" />
+                <Field field="DEST_AIRPORT_SEQ_ID" selected="True" />
+                <Field field="DEST" selected="True" />
+                <Field field="DEST_CITY_NAME" selected="True" />
+                <Field field="DEST_STATE_ABR" selected="True" />
+                <Field field="CRS_DEP_TIME" selected="True" />
+                <Field field="DEP_TIME" selected="True" />
+                <Field field="DEP_DELAY" selected="True" />
+                <Field field="DEP_DELAY_NEW" selected="True" />
+                <Field field="CRS_ARR_TIME" selected="True" />
+                <Field field="ARR_TIME" selected="True" />
+                <Field field="ARR_DELAY" selected="True" />
+                <Field field="ARR_DELAY_NEW" selected="True" />
+                <Field field="CANCELLED" selected="True" />
+                <Field field="CANCELLATION_CODE" selected="True" />
+                <Field field="DIVERTED" selected="True" />
+                <Field field="CRS_ELAPSED_TIME" selected="True" />
+                <Field field="ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="AIR_TIME" selected="True" />
+                <Field field="FLIGHTS" selected="True" />
+                <Field field="DISTANCE" selected="True" />
+                <Field field="DISTANCE_GROUP" selected="True" />
+                <Field field="CARRIER_DELAY" selected="True" />
+                <Field field="WEATHER_DELAY" selected="True" />
+                <Field field="NAS_DELAY" selected="True" />
+                <Field field="SECURITY_DELAY" selected="True" />
+                <Field field="LATE_AIRCRAFT_DELAY" selected="True" />
+                <Field field="FIRST_DEP_TIME" selected="True" />
+                <Field field="TOTAL_ADD_GTIME" selected="True" />
+                <Field field="LONGEST_ADD_GTIME" selected="True" />
+                <Field field="DIV_AIRPORT_LANDINGS" selected="True" />
+                <Field field="DIV_REACHED_DEST" selected="True" />
+                <Field field="DIV_ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="DIV_ARR_DELAY" selected="True" />
+                <Field field="DIV_DISTANCE" selected="True" />
+                <Field field="DIV1_AIRPORT" selected="True" />
+                <Field field="Field_49" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="QUARTER" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DAY_OF_MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="FL_DATE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Date" />
+                <Field name="OP_UNIQUE_CARRIER" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN_AIRPORT_SEQ_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Int32" />
+                <Field name="ORIGIN" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ORIGIN_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="DEST_AIRPORT_SEQ_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Int32" />
+                <Field name="DEST" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="CRS_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DEP_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ARR_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLATION_CODE" size="1" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DIVERTED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="AIR_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FLIGHTS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE_GROUP" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="CARRIER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="WEATHER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="NAS_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="SECURITY_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LATE_AIRCRAFT_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FIRST_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="TOTAL_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LONGEST_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_AIRPORT_LANDINGS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DIV_REACHED_DEST" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV1_AIRPORT" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="String" />
+                <Field name="Field_49" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_2_ONTIME_REPORTING.csv" type="Bool" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="174" y="474" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="YEAR" selected="True" />
+                <Field field="QUARTER" selected="True" />
+                <Field field="MONTH" selected="True" />
+                <Field field="DAY_OF_MONTH" selected="True" />
+                <Field field="FL_DATE" selected="True" />
+                <Field field="OP_UNIQUE_CARRIER" selected="True" />
+                <Field field="OP_CARRIER_AIRLINE_ID" selected="True" />
+                <Field field="ORIGIN_AIRPORT_ID" selected="True" />
+                <Field field="ORIGIN_AIRPORT_SEQ_ID" selected="True" />
+                <Field field="ORIGIN" selected="True" />
+                <Field field="ORIGIN_CITY_NAME" selected="True" />
+                <Field field="ORIGIN_STATE_ABR" selected="True" />
+                <Field field="DEST_AIRPORT_ID" selected="True" />
+                <Field field="DEST_AIRPORT_SEQ_ID" selected="True" />
+                <Field field="DEST" selected="True" />
+                <Field field="DEST_CITY_NAME" selected="True" />
+                <Field field="DEST_STATE_ABR" selected="True" />
+                <Field field="CRS_DEP_TIME" selected="True" />
+                <Field field="DEP_TIME" selected="True" />
+                <Field field="DEP_DELAY" selected="True" />
+                <Field field="DEP_DELAY_NEW" selected="True" />
+                <Field field="CRS_ARR_TIME" selected="True" />
+                <Field field="ARR_TIME" selected="True" />
+                <Field field="ARR_DELAY" selected="True" />
+                <Field field="ARR_DELAY_NEW" selected="True" />
+                <Field field="CANCELLED" selected="True" />
+                <Field field="CANCELLATION_CODE" selected="True" />
+                <Field field="DIVERTED" selected="True" />
+                <Field field="CRS_ELAPSED_TIME" selected="True" />
+                <Field field="ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="AIR_TIME" selected="True" />
+                <Field field="FLIGHTS" selected="True" />
+                <Field field="DISTANCE" selected="True" />
+                <Field field="DISTANCE_GROUP" selected="True" />
+                <Field field="CARRIER_DELAY" selected="True" />
+                <Field field="WEATHER_DELAY" selected="True" />
+                <Field field="NAS_DELAY" selected="True" />
+                <Field field="SECURITY_DELAY" selected="True" />
+                <Field field="LATE_AIRCRAFT_DELAY" selected="True" />
+                <Field field="FIRST_DEP_TIME" selected="True" />
+                <Field field="TOTAL_ADD_GTIME" selected="True" />
+                <Field field="LONGEST_ADD_GTIME" selected="True" />
+                <Field field="DIV_AIRPORT_LANDINGS" selected="True" />
+                <Field field="DIV_REACHED_DEST" selected="True" />
+                <Field field="DIV_ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="DIV_ARR_DELAY" selected="True" />
+                <Field field="DIV_DISTANCE" selected="True" />
+                <Field field="DIV1_AIRPORT" selected="True" />
+                <Field field="Field_49" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="QUARTER" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DAY_OF_MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="FL_DATE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Date" />
+                <Field name="OP_UNIQUE_CARRIER" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN_AIRPORT_SEQ_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Int32" />
+                <Field name="ORIGIN" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ORIGIN_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="DEST_AIRPORT_SEQ_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Int32" />
+                <Field name="DEST" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="CRS_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DEP_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ARR_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLATION_CODE" size="1" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DIVERTED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="AIR_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FLIGHTS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE_GROUP" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="CARRIER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="WEATHER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="NAS_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="SECURITY_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LATE_AIRCRAFT_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FIRST_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="TOTAL_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LONGEST_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_AIRPORT_LANDINGS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DIV_REACHED_DEST" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV1_AIRPORT" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="String" />
+                <Field name="Field_49" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_5_ONTIME_REPORTING.csv" type="Bool" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="174" y="294" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="YEAR" selected="True" />
+                <Field field="QUARTER" selected="True" />
+                <Field field="MONTH" selected="True" />
+                <Field field="DAY_OF_MONTH" selected="True" />
+                <Field field="FL_DATE" selected="True" />
+                <Field field="OP_UNIQUE_CARRIER" selected="True" />
+                <Field field="OP_CARRIER_AIRLINE_ID" selected="True" />
+                <Field field="ORIGIN_AIRPORT_ID" selected="True" />
+                <Field field="ORIGIN_AIRPORT_SEQ_ID" selected="True" />
+                <Field field="ORIGIN" selected="True" />
+                <Field field="ORIGIN_CITY_NAME" selected="True" />
+                <Field field="ORIGIN_STATE_ABR" selected="True" />
+                <Field field="DEST_AIRPORT_ID" selected="True" />
+                <Field field="DEST_AIRPORT_SEQ_ID" selected="True" />
+                <Field field="DEST" selected="True" />
+                <Field field="DEST_CITY_NAME" selected="True" />
+                <Field field="DEST_STATE_ABR" selected="True" />
+                <Field field="CRS_DEP_TIME" selected="True" />
+                <Field field="DEP_TIME" selected="True" />
+                <Field field="DEP_DELAY" selected="True" />
+                <Field field="DEP_DELAY_NEW" selected="True" />
+                <Field field="CRS_ARR_TIME" selected="True" />
+                <Field field="ARR_TIME" selected="True" />
+                <Field field="ARR_DELAY" selected="True" />
+                <Field field="ARR_DELAY_NEW" selected="True" />
+                <Field field="CANCELLED" selected="True" />
+                <Field field="CANCELLATION_CODE" selected="True" />
+                <Field field="DIVERTED" selected="True" />
+                <Field field="CRS_ELAPSED_TIME" selected="True" />
+                <Field field="ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="AIR_TIME" selected="True" />
+                <Field field="FLIGHTS" selected="True" />
+                <Field field="DISTANCE" selected="True" />
+                <Field field="DISTANCE_GROUP" selected="True" />
+                <Field field="CARRIER_DELAY" selected="True" />
+                <Field field="WEATHER_DELAY" selected="True" />
+                <Field field="NAS_DELAY" selected="True" />
+                <Field field="SECURITY_DELAY" selected="True" />
+                <Field field="LATE_AIRCRAFT_DELAY" selected="True" />
+                <Field field="FIRST_DEP_TIME" selected="True" />
+                <Field field="TOTAL_ADD_GTIME" selected="True" />
+                <Field field="LONGEST_ADD_GTIME" selected="True" />
+                <Field field="DIV_AIRPORT_LANDINGS" selected="True" />
+                <Field field="DIV_REACHED_DEST" selected="True" />
+                <Field field="DIV_ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="DIV_ARR_DELAY" selected="True" />
+                <Field field="DIV_DISTANCE" selected="True" />
+                <Field field="DIV1_AIRPORT" selected="True" />
+                <Field field="Field_49" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="QUARTER" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DAY_OF_MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="FL_DATE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Date" />
+                <Field name="OP_UNIQUE_CARRIER" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN_AIRPORT_SEQ_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Int32" />
+                <Field name="ORIGIN" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ORIGIN_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="DEST_AIRPORT_SEQ_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Int32" />
+                <Field name="DEST" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="CRS_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DEP_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ARR_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLATION_CODE" size="1" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DIVERTED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="AIR_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FLIGHTS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE_GROUP" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="CARRIER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="WEATHER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="NAS_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="SECURITY_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LATE_AIRCRAFT_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FIRST_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="TOTAL_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LONGEST_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_AIRPORT_LANDINGS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DIV_REACHED_DEST" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV1_AIRPORT" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="String" />
+                <Field name="Field_49" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_3_ONTIME_REPORTING.csv" type="Bool" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="174" y="390" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="YEAR" selected="True" />
+                <Field field="QUARTER" selected="True" />
+                <Field field="MONTH" selected="True" />
+                <Field field="DAY_OF_MONTH" selected="True" />
+                <Field field="FL_DATE" selected="True" />
+                <Field field="OP_UNIQUE_CARRIER" selected="True" />
+                <Field field="OP_CARRIER_AIRLINE_ID" selected="True" />
+                <Field field="ORIGIN_AIRPORT_ID" selected="True" />
+                <Field field="ORIGIN_AIRPORT_SEQ_ID" selected="True" />
+                <Field field="ORIGIN" selected="True" />
+                <Field field="ORIGIN_CITY_NAME" selected="True" />
+                <Field field="ORIGIN_STATE_ABR" selected="True" />
+                <Field field="DEST_AIRPORT_ID" selected="True" />
+                <Field field="DEST_AIRPORT_SEQ_ID" selected="True" />
+                <Field field="DEST" selected="True" />
+                <Field field="DEST_CITY_NAME" selected="True" />
+                <Field field="DEST_STATE_ABR" selected="True" />
+                <Field field="CRS_DEP_TIME" selected="True" />
+                <Field field="DEP_TIME" selected="True" />
+                <Field field="DEP_DELAY" selected="True" />
+                <Field field="DEP_DELAY_NEW" selected="True" />
+                <Field field="CRS_ARR_TIME" selected="True" />
+                <Field field="ARR_TIME" selected="True" />
+                <Field field="ARR_DELAY" selected="True" />
+                <Field field="ARR_DELAY_NEW" selected="True" />
+                <Field field="CANCELLED" selected="True" />
+                <Field field="CANCELLATION_CODE" selected="True" />
+                <Field field="DIVERTED" selected="True" />
+                <Field field="CRS_ELAPSED_TIME" selected="True" />
+                <Field field="ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="AIR_TIME" selected="True" />
+                <Field field="FLIGHTS" selected="True" />
+                <Field field="DISTANCE" selected="True" />
+                <Field field="DISTANCE_GROUP" selected="True" />
+                <Field field="CARRIER_DELAY" selected="True" />
+                <Field field="WEATHER_DELAY" selected="True" />
+                <Field field="NAS_DELAY" selected="True" />
+                <Field field="SECURITY_DELAY" selected="True" />
+                <Field field="LATE_AIRCRAFT_DELAY" selected="True" />
+                <Field field="FIRST_DEP_TIME" selected="True" />
+                <Field field="TOTAL_ADD_GTIME" selected="True" />
+                <Field field="LONGEST_ADD_GTIME" selected="True" />
+                <Field field="DIV_AIRPORT_LANDINGS" selected="True" />
+                <Field field="DIV_REACHED_DEST" selected="True" />
+                <Field field="DIV_ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="DIV_ARR_DELAY" selected="True" />
+                <Field field="DIV_DISTANCE" selected="True" />
+                <Field field="DIV1_AIRPORT" selected="True" />
+                <Field field="Field_49" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="QUARTER" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DAY_OF_MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="FL_DATE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Date" />
+                <Field name="OP_UNIQUE_CARRIER" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN_AIRPORT_SEQ_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Int32" />
+                <Field name="ORIGIN" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ORIGIN_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="DEST_AIRPORT_SEQ_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Int32" />
+                <Field name="DEST" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="CRS_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DEP_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ARR_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLATION_CODE" size="1" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DIVERTED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="AIR_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FLIGHTS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE_GROUP" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="CARRIER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="WEATHER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="NAS_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="SECURITY_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LATE_AIRCRAFT_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FIRST_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="TOTAL_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LONGEST_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_AIRPORT_LANDINGS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DIV_REACHED_DEST" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV1_AIRPORT" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="String" />
+                <Field name="Field_49" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_4_ONTIME_REPORTING.csv" type="Bool" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="174" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="YEAR" selected="True" />
+                <Field field="QUARTER" selected="True" />
+                <Field field="MONTH" selected="True" />
+                <Field field="DAY_OF_MONTH" selected="True" />
+                <Field field="FL_DATE" selected="True" />
+                <Field field="OP_UNIQUE_CARRIER" selected="True" />
+                <Field field="OP_CARRIER_AIRLINE_ID" selected="True" />
+                <Field field="ORIGIN_AIRPORT_ID" selected="True" />
+                <Field field="ORIGIN_AIRPORT_SEQ_ID" selected="True" />
+                <Field field="ORIGIN" selected="True" />
+                <Field field="ORIGIN_CITY_NAME" selected="True" />
+                <Field field="ORIGIN_STATE_ABR" selected="True" />
+                <Field field="DEST_AIRPORT_ID" selected="True" />
+                <Field field="DEST_AIRPORT_SEQ_ID" selected="True" />
+                <Field field="DEST" selected="True" />
+                <Field field="DEST_CITY_NAME" selected="True" />
+                <Field field="DEST_STATE_ABR" selected="True" />
+                <Field field="CRS_DEP_TIME" selected="True" />
+                <Field field="DEP_TIME" selected="True" />
+                <Field field="DEP_DELAY" selected="True" />
+                <Field field="DEP_DELAY_NEW" selected="True" />
+                <Field field="CRS_ARR_TIME" selected="True" />
+                <Field field="ARR_TIME" selected="True" />
+                <Field field="ARR_DELAY" selected="True" />
+                <Field field="ARR_DELAY_NEW" selected="True" />
+                <Field field="CANCELLED" selected="True" />
+                <Field field="CANCELLATION_CODE" selected="True" />
+                <Field field="DIVERTED" selected="True" />
+                <Field field="CRS_ELAPSED_TIME" selected="True" />
+                <Field field="ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="AIR_TIME" selected="True" />
+                <Field field="FLIGHTS" selected="True" />
+                <Field field="DISTANCE" selected="True" />
+                <Field field="DISTANCE_GROUP" selected="True" />
+                <Field field="CARRIER_DELAY" selected="True" />
+                <Field field="WEATHER_DELAY" selected="True" />
+                <Field field="NAS_DELAY" selected="True" />
+                <Field field="SECURITY_DELAY" selected="True" />
+                <Field field="LATE_AIRCRAFT_DELAY" selected="True" />
+                <Field field="FIRST_DEP_TIME" selected="True" />
+                <Field field="TOTAL_ADD_GTIME" selected="True" />
+                <Field field="LONGEST_ADD_GTIME" selected="True" />
+                <Field field="DIV_AIRPORT_LANDINGS" selected="True" />
+                <Field field="DIV_REACHED_DEST" selected="True" />
+                <Field field="DIV_ACTUAL_ELAPSED_TIME" selected="True" />
+                <Field field="DIV_ARR_DELAY" selected="True" />
+                <Field field="DIV_DISTANCE" selected="True" />
+                <Field field="DIV1_AIRPORT" selected="True" />
+                <Field field="Field_49" selected="True" />
+                <Field field="*Unknown" selected="True" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="YEAR" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="QUARTER" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DAY_OF_MONTH" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="FL_DATE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Date" />
+                <Field name="OP_UNIQUE_CARRIER" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="OP_CARRIER_AIRLINE_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="ORIGIN_AIRPORT_SEQ_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Int32" />
+                <Field name="ORIGIN" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ORIGIN_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="ORIGIN_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_AIRPORT_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Int16" />
+                <Field name="DEST_AIRPORT_SEQ_ID" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Int32" />
+                <Field name="DEST" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEST_CITY_NAME" size="34" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="V_String" />
+                <Field name="DEST_STATE_ABR" size="2" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="CRS_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DEP_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DEP_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ARR_DELAY_NEW" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CANCELLATION_CODE" size="1" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="DIVERTED" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="CRS_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="AIR_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FLIGHTS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DISTANCE_GROUP" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="CARRIER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="WEATHER_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="NAS_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="SECURITY_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LATE_AIRCRAFT_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="FIRST_DEP_TIME" size="4" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="TOTAL_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="LONGEST_ADD_GTIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_AIRPORT_LANDINGS" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Byte" />
+                <Field name="DIV_REACHED_DEST" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ACTUAL_ELAPSED_TIME" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_ARR_DELAY" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV_DISTANCE" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Double" />
+                <Field name="DIV1_AIRPORT" size="3" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="String" />
+                <Field name="Field_49" source="File: C:\classes\Data Analysis\Communication Data Findings\2020_6_ONTIME_REPORTING.csv" type="Bool" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="21" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="21" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection name="#6">
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection name="#5">
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="1" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>2020_ontime</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
