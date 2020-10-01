@@ -1,5 +1,5 @@
-# (Dataset Exploration Title)
-## by (your name here)
+# Effects of Flight Characteristics on Flight Status
+## by Jennifer Powell
 
 
 ## Dataset
