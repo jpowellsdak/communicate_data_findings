@@ -1,5 +1,5 @@
-# Effects of Flight Characteristics on Flight Status
-## by Jennifer Powell
+# (Dataset Exploration Title)
+## by (your name here)
 
 
 ## Dataset
@@ -14,6 +14,8 @@
 >- I found that there is an unexpected connection between distance flown and carrier delays. The short leg airlines have some of the higher carrier delays. 
 
 >- The 4 largest airlines have the highest overall total delays and cancellations, but when you take the mean of the delays, they are towards the bottom of the list.
+
+>- Covid has had a huge impact on flight status.  There were almost 1 million less flights flown in Jan-Jun of 2020.  The number of cancelled flights went way up, while the delays went down (due to flights being cancelled not delayed).  Not sure why, but most cancellations were considered security cancellations.
 
 ## Key Insights for Presentation
 
@@ -33,8 +35,8 @@
 >-  Last but not least, I found it interesting that when you look at the means of the delays, the smaller airlines have the longest delays.  However, if you look purely at total delayed flights, and total flight delays (sum of all of those delays) in minutes, then you're looking at the big 4:  American Airlines, Southwest Airlines, Delta Air Lines, United Air Lines.
 
 ##  Resources
-- towardsdatascience.com
-- medium.com
-- stackoverflow
-- seaborn, pandas, matplotlib docs
-- templates, class notes and examples
+towardsdatascience.com
+medium.com
+stackoverflow
+seaborn, pandas, matplotlib docs
+templates, class notes and examples
