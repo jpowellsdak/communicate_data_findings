@@ -33,8 +33,8 @@
 >-  Last but not least, I found it interesting that when you look at the means of the delays, the smaller airlines have the longest delays.  However, if you look purely at total delayed flights, and total flight delays (sum of all of those delays) in minutes, then you're looking at the big 4:  American Airlines, Southwest Airlines, Delta Air Lines, United Air Lines.
 
 ##  Resources
-towardsdatascience.com
-medium.com
-stackoverflow
-seaborn, pandas, matplotlib docs
-templates, class notes and examples
+- towardsdatascience.com
+- medium.com
+- stackoverflow
+- seaborn, pandas, matplotlib docs
+- templates, class notes and examples
