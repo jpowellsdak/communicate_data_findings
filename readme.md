@@ -9,7 +9,7 @@
 
 ## Summary of Findings
 
->- THere was a pattern with flight Delays with an increase in Feb, then March drops, then there's a gradual increase each month of April, May and June. With Covid however, this pattern changed completely in 2020. In 2020 there were almost no delays, only cancellations for March, April and part of May.  The cancellations were almost entirely SECURITY delays.
+>- There was a pattern with flight Delays with an increase in Feb, then March drops, then there's a gradual increase each month of April, May and June. With Covid however, this pattern changed completely in 2020. In 2020 there were almost no delays, only cancellations for March, April and part of May.  The cancellations were almost entirely SECURITY delays.
 
 >- I found that there is an unexpected connection between distance flown and carrier delays. The short leg airlines have some of the higher carrier delays. 
 
@@ -35,8 +35,8 @@
 >-  Last but not least, I found it interesting that when you look at the means of the delays, the smaller airlines have the longest delays.  However, if you look purely at total delayed flights, and total flight delays (sum of all of those delays) in minutes, then you're looking at the big 4:  American Airlines, Southwest Airlines, Delta Air Lines, United Air Lines.
 
 ##  Resources
-towardsdatascience.com
-medium.com
-stackoverflow
-seaborn, pandas, matplotlib docs
-templates, class notes and examples
+- towardsdatascience.com
+- medium.com
+- stackoverflow
+- seaborn, pandas, matplotlib docs
+- templates, class notes and examples
